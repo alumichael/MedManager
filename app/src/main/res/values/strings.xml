@@ -1,0 +1,120 @@
+<resources>
+    <string name="app_name"> ​Med-Manager</string>
+    <string name="no_cardetails">Click on the button below to begin creating your reminder!</string>
+    <string name="title_activity_add_reminder">Add Drug Remainder</string>
+    <string name="title_activity_edit_reminder">Edit Drug Reminder</string>
+    <string name="title_activity_licenses">Licenses</string>
+
+    <string name="add_reminder">Drug Name</string>
+    <string name="details">Details</string>
+    <string name="startdate">Start Date</string>
+    <string name="stopdate">Stop Date</string>
+    <string name="description">Description</string>
+    <string name="time">Time</string>
+    <string name="repeat">Repeat</string>
+    <string name="repeat_off">Off</string>
+    <string name="repeat_no">Repetition Interval </string>
+    <string name="repeat_type">Type of Repetitions</string>
+
+    <string name="action_discard_reminder">Discard Drug Reminder</string>
+    <string name="action_save_reminder">Save Drug Reminder</string>
+
+    <string name="editor_activity_title_new_reminder">Add Drug Details</string>
+    <string name="editor_activity_title_edit_reminder">Edit Drug Reminder</string>
+    <string name="unsaved_changes_dialog_msg">Discard your changes and quit editing?</string>
+    <string name="discard">Discard</string>
+
+    <string name="keep_editing">Keep Editing</string>
+    <string name="delete_dialog_msg">Delete this Drug Reminder?</string>
+
+    <string name="delete">Delete</string>
+
+    <string name="cancel">Cancel</string>
+    <string name="editor_delete_reminder_successful">Drug Reminder deleted</string>
+
+    <string name="editor_delete_reminder_failed">Error with deleting drug reminder</string>
+
+    <string name="editor_insert_reminder_successful">Drug Reminder saved</string>
+
+    <string name="editor_insert_reminder_failed">Error with saving drug reminder</string>
+
+    <string name="editor_update_reminder_successful">Drug Reminder updated</string>
+
+    <string name="editor_update_reminder_failed">Error with updating drug reminder</string>
+
+    <string name="reminder_title">Drug Reminder</string>
+    <string name="loading">Loading....</string>
+    <string name="please_wait">Please Wait</string>
+
+
+
+    <string name="action_delete_all_entries">Delete All Employees</string>
+
+    <string name="empty_view_title_text">It\'s a bit lonely here...</string>
+
+    <string name="empty_view_subtitle_text">Get started by adding an Employee</string>
+
+    <string name="editor_activity_title_new_employee">Add an Employee</string>
+
+    <string name="editor_activity_title_edit_employee">Edit Employee</string>
+
+    <string name="action_save">Save</string>
+
+
+
+    <string name="editor_insert_employee_successful">Employee saved</string>
+
+    <string name="editor_insert_employee_failed">Error with saving employee</string>
+
+    <string name="editor_update_employee_successful">Employee updated</string>
+
+    <string name="editor_update_employee_failed">Error with updating employee</string>
+
+
+
+    <string name="editor_delete_employee_successful">Employee deleted</string>
+
+    <string name="editor_delete_employee_failed">Error with deleting employee</string>
+
+    <string name="employee_name">Employee Name</string>
+
+    <string name="category_gender">Gender</string>
+
+    <string name="category_title">Employee Title</string>
+
+    <string name="category_department">Employee Department</string>
+
+    <string name="category_city">Employee City</string>
+
+    <string name="category_phone">Employee Phone</string>
+
+    <string name="category_email">Employee Email</string>
+
+    <string name="hint_employee_firstname">First Name</string>
+
+    <string name="hint_employee_title">Title</string>
+
+    <string name="hint_employee_department">Department</string>
+
+    <string name="hint_employee_city">City</string>
+
+    <string name="hint_employee_phone">Phone Number</string>
+
+    <string name="hint_employee_email">Email</string>
+
+    <string name="hint_employee_lastname">Last Name</string>
+
+    <string name="gender_unknown">Unknown</string>
+
+    <string name="gender_male">Male</string>
+
+    <string name="gender_female">Female</string>
+
+    <string name="unknown">Unknown</string>
+
+    <string name="menu_search">Search</string>
+    <string name="search_hint">"Search drugs" </string>
+
+    <string name="uploadImages">Set your image</string>
+    <string name="action_pic">Pictures</string>
+</resources>

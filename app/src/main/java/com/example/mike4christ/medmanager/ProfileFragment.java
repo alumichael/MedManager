@@ -19,7 +19,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,12 +27,14 @@ import com.example.mike4christ.medmanager.Firebase.FirebaseStorageHelper;
 import com.example.mike4christ.medmanager.Helper.Helper;
 import com.example.mike4christ.medmanager.Helper.SimpleDividerItemDecoration;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 
 public class ProfileFragment extends Fragment {
 
     private static final String TAG = ProfileFragment.class.getSimpleName();
 
-    private ImageView profilePhoto;
+    private CircleImageView profilePhoto;
 
     private TextView profileName;
 
@@ -69,7 +70,7 @@ public class ProfileFragment extends Fragment {
         profileName.setVisibility(View.GONE);
         country.setVisibility(View.GONE);
 
-        profilePhoto = (ImageView)view.findViewById(R.id.circleView);
+        profilePhoto = (CircleImageView) view.findViewById(R.id.circleView);
         profilePhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

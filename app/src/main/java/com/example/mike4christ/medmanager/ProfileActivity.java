@@ -23,6 +23,7 @@ public class ProfileActivity extends AppCompatActivity{
     private FragmentManager fragmentManager;
     private FirebaseAuth mAuth;
     private Fragment fragment = null;
+    FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,8 +58,8 @@ public class ProfileActivity extends AppCompatActivity{
                     Intent intent=new Intent(ProfileActivity.this,MainActivity2.class);
                     startActivity(intent);
 
-                } else if (id == R.id.nav_logout) {
-                    logoutUser();
+                } else if (id == R.id.nav_about) {
+                    about();
                 }
 
                 FragmentTransaction transaction = fragmentManager.beginTransaction();
@@ -72,12 +73,10 @@ public class ProfileActivity extends AppCompatActivity{
             }
         });
     }
-    private void logoutUser() {
-        mAuth.signOut();
-        if (mAuth.getCurrentUser() == null) {
-            startActivity(new Intent(ProfileActivity.this, LoginActivity.class));
-            finish();
-        }
+    private void about() {
+
+        Intent intent=new Intent(ProfileActivity.this,About.class);
+        startActivity(intent);
     }
 
     @Override

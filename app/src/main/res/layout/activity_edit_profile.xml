@@ -15,10 +15,10 @@
         android:hint="@string/edit_profile_name"
         android:inputType="textPersonName"
         android:maxLines="1"
+        android:textColorHint="#ffffff"
         android:padding="12dp"
+        android:layout_marginTop="20dp"
         android:textSize="12sp"
-        android:background="@drawable/bottom_border"
-        android:textColor="@color/colorBlack"
         android:singleLine="true" />
 
     <EditText
@@ -30,8 +30,7 @@
         android:maxLines="1"
         android:padding="12dp"
         android:textSize="12sp"
-        android:background="@drawable/bottom_border"
-        android:textColor="@color/colorBlack"
+        android:textColorHint="#ffffff"
         android:layout_marginTop="16dp"
         android:singleLine="true" />
 
@@ -44,8 +43,7 @@
         android:maxLines="1"
         android:padding="12dp"
         android:textSize="12sp"
-        android:background="@drawable/bottom_border"
-        android:textColor="@color/colorBlack"
+       android:textColorHint="#ffffff"
         android:layout_marginTop="8dp"
         android:singleLine="true" />
 
@@ -58,8 +56,7 @@
         android:maxLines="1"
         android:padding="12dp"
         android:textSize="12sp"
-        android:background="@drawable/bottom_border"
-        android:textColor="@color/colorBlack"
+        android:textColorHint="#ffffff"
         android:layout_marginTop="8dp"
         android:singleLine="true" />
 
@@ -79,8 +76,7 @@
             android:maxLines="1"
             android:padding="12dp"
             android:textSize="12sp"
-            android:background="@drawable/bottom_border"
-            android:textColor="@color/colorBlack"
+            android:textColorHint="#ffffff"
             android:layout_marginTop="8dp"
             android:singleLine="true" />
 
@@ -89,9 +85,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:textColor="@color/colorWhite"
             android:text="@string/select_date"
-            android:background="@color/colorPrimaryDark"
+            android:background="@drawable/roundededit"
             android:layout_weight="3"/>
 
     </LinearLayout>
@@ -103,7 +98,7 @@
         android:layout_marginTop="8dp"
         android:textColor="@color/colorWhite"
         android:text="@string/save_edit"
-        android:background="@color/colorPrimaryDark"
+        android:background="@drawable/roundededit"
         android:padding="12dp"/>
 
 

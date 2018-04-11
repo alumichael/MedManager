@@ -5,7 +5,6 @@ import android.content.Context;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.util.Log;
-import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -13,6 +12,8 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class FirebaseStorageHelper {
 
@@ -31,10 +32,10 @@ public class FirebaseStorageHelper {
 
     private void init(){
         this.firebaseStorage = FirebaseStorage.getInstance();
-        rootRef = firebaseStorage.getReferenceFromUrl("gs://fir-analyticexample.appspot.com");
+        rootRef = firebaseStorage.getReferenceFromUrl("gs://medmanager-c6281.appspot.com");
     }
 
-    public void saveProfileImageToCloud(String userId, Uri selectedImageUri, final ImageView imageView) {
+    public void saveProfileImageToCloud(String userId, Uri selectedImageUri, final CircleImageView imageView) {
 
         StorageReference photoParentRef = rootRef.child(userId);
         StorageReference photoRef = photoParentRef.child(selectedImageUri.getLastPathSegment());

@@ -17,9 +17,9 @@
         <menu>
 
             <item
-                android:id="@+id/nav_logout"
-                android:icon="@android:drawable/ic_menu_add"
-                android:title="@string/menu_logout" />
+                android:id="@+id/nav_about"
+                android:icon="@android:drawable/ic_menu_info_details"
+                android:title="@string/about" />
         </menu>
     </item>
 

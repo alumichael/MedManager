@@ -19,7 +19,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 /**
- * Created by delaroy on 8/23/17.
+ * Created by Alu Michael on 8/23/17.
  */
 
 public class SearchableActivity extends ListActivity {
@@ -56,6 +56,7 @@ public class SearchableActivity extends ListActivity {
 
         }
         fillList(query);
+
     }
 
     private void fillList(String query) {
@@ -95,11 +96,12 @@ public class SearchableActivity extends ListActivity {
                 0);
 
         setListAdapter(adapter);
+
     }
 
     @Override
     protected void onListItemClick(ListView l, View view, int position, long id) {
-        Intent intent = new Intent(SearchableActivity.this, EmployeeDetails.class);
+        Intent intent = new Intent(SearchableActivity.this, AddReminderActivity.class);
 
         Uri details = Uri.withAppendedPath(AlarmReminderContract.AlarmReminderEntry.CONTENT_URI, "" + id);
         intent.setData(details);

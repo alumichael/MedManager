@@ -1,68 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.mike4christ.medmanager"
+    package="com.example.mike4christ.medmanager">
 
-    >
-
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".Login">
+        android:theme="@style/AppTheme"
+
+        >
+        <activity android:name=".ForgotPassword" />
+
+        <activity android:name=".SplashActivity"
+            android:theme="@style/Splash"
+            android:screenOrientation="portrait"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DashBoard" />
-        <activity android:name=".ForgotPassword" />
-        <activity android:name=".SignUp"/>
-
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".AddReminderActivity"
+        <activity
+            android:name=".AddReminderActivity"
             android:label="@string/title_activity_add_reminder"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".MainActivity2"
             android:theme="@style/AppTheme">
-            <!-- Parent activity meta-data to support 4.0 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"
-                />
-        </activity>
-        <activity android:name=".EmployeeActivity"
-            android:parentActivityName=".MainActivity">
-            <!-- Parent activity meta-data to support 4.0 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"
-                />
-        </activity>
-        <activity android:name=".EmployeeEditor"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/EditorTheme"
-            >
-            <!-- Parent activity meta-data to support 4.0 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"
-                />
-        </activity>
 
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity2" />
+        </activity>
+        <activity
+            android:name=".EmployeeActivity"
+            android:parentActivityName=".MainActivity2">
 
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity2" />
+        </activity>
 
         <provider
             android:name=".data.AlarmReminderProvider"
@@ -74,8 +59,8 @@
             android:exported="false" />
 
         <activity
-            android:name="com.example.mike4christ.medmanager.SearchableActivity"
-            android:launchMode="singleTop" >
+            android:name=".SearchableActivity"
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
@@ -92,7 +77,14 @@
         <meta-data
             android:name="android.app.default_searchable"
             android:value="com.example.mike4christ.medmanager.SearchableActivity" />
-
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".SignUpActivity" />
+        <activity
+            android:name=".ProfileActivity"
+            android:label="@string/title_activity_profile"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".EditProfileActivity">
+        </activity>
 
     </application>
 

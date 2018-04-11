@@ -51,5 +51,8 @@ dependencies {
     compile "com.hendraanggrian:bundler:0.5.0"
     kapt "com.hendraanggrian:bundler-compiler:0.5.0"
     compile 'com.theartofdev.edmodo:android-image-cropper:2.3.1'
+
+    compile 'com.intuit.sdp:sdp-android:1.0.3'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
 }
 apply plugin: 'com.google.gms.google-services'

@@ -13,23 +13,6 @@
     </style>
 
 
-    <!-- Theme of the editor -->
-    <style name="EditorTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">@color/editorColorPrimary</item>
-        <item name="colorPrimaryDark">@color/editorColorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-    </style>
-
-    <!-- Style for a category in the editor -->
-    <style name="CategoryStyle">
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_weight">1</item>
-        <item name="android:paddingTop">16dp</item>
-        <item name="android:textColor">@color/text</item>
-        <item name="android:fontFamily">sans-serif-medium</item>
-        <item name="android:textAppearance">?android:textAppearanceSmall</item>
-    </style>
 
     <style name="CircularRevealTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowIsTranslucent">true</item>
@@ -53,11 +36,17 @@
         <item name="android:paddingTop">16dp</item>
         <item name="android:textAppearance">?android:textAppearanceSmall</item>
     </style>
-    <style name="Edit_Profile" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="Splash" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 
 </resources>

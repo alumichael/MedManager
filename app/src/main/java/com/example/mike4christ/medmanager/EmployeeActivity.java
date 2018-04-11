@@ -22,21 +22,17 @@ import android.content.CursorLoader;
 import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
-import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.mike4christ.medmanager.data.AlarmReminderContract;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -53,7 +49,7 @@ public class EmployeeActivity extends AppCompatActivity implements
     EmployeeCursorAdapter mCursorAdapter;
 
 
-    @BindView(R.id.fab) FloatingActionButton button;
+
 
     public EmployeeActivity(){
 
@@ -66,18 +62,9 @@ public class EmployeeActivity extends AppCompatActivity implements
 
         // Setup FAB to open EmployeeEditor
         ButterKnife.bind(this);
-        findViewById(R.id.fab).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(EmployeeActivity.this, EmployeeEditor.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                intent.putExtra(EmployeeEditor.EXTRA_RECT, createRect(button));
-                startActivity(intent);
-            }
-        });
 
         // Find the ListView which will be populated with the employee data
-        ListView employeeListView = (ListView) findViewById(R.id.list);
+        ListView employeeListView =  findViewById(R.id.list);
 
         // Find and set empty view on the ListView, so that it only shows when the list has 0 items.
         View emptyView = findViewById(R.id.empty_view);
@@ -105,7 +92,7 @@ public class EmployeeActivity extends AppCompatActivity implements
 
                 // Set the URI on the data field of the intent
                 intent.setData(currentEmployeeUri);
-                intent.putExtra(EmployeeEditor.EXTRA_RECT, createRect(button));
+               // intent.putExtra(AddReminderActivity.EXTRA_RECT, createRect(button));
 
                 startActivity(intent);
 
@@ -128,7 +115,7 @@ public class EmployeeActivity extends AppCompatActivity implements
 
                 // Set the URI on the data field of the intent
                 intent.setData(currentEmployeeUri);
-                intent.putExtra(EmployeeEditor.EXTRA_RECT, createRect(button));
+              //  intent.putExtra(EmployeeEditor.EXTRA_RECT, createRect(button));
 
                 // Launch the {@link EmployeeEditor} to display the data for the current employee.
                 startActivity(intent);
@@ -143,12 +130,12 @@ public class EmployeeActivity extends AppCompatActivity implements
 
     }
 
-    private Rect createRect(View view) {
+   /* private Rect createRect(View view) {
         Rect rect = new Rect();
         view.getDrawingRect(rect);
         ((ViewGroup) view.getParent()).offsetDescendantRectToMyCoords(view, rect);
         return rect;
-    }
+    }*/
 
 
     @Override

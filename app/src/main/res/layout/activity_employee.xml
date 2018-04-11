@@ -44,6 +44,7 @@
             android:id="@+id/empty_shelter_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="shelterimage"
             android:layout_centerHorizontal="true"
             android:src="@drawable/ic_add"/>
 
@@ -71,12 +72,5 @@
             android:textColor="#A2AAB0"/>
     </RelativeLayout>
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_margin="@dimen/fab_margin"
-        android:src="@drawable/ic_person_add_black_24dp"/>
+
 </RelativeLayout>

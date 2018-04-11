@@ -22,7 +22,7 @@ public class ForgotPassword extends AppCompatActivity implements View.OnClickLis
     private TextView btnBack;
     private RelativeLayout activity_forgot;
 
-    private FirebaseAuth auth;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,16 +30,16 @@ public class ForgotPassword extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_forgot_password);
 
         //View
-        input_email = (EditText)findViewById(R.id.forgot_email);
-        btnResetPass = (Button)findViewById(R.id.forgot_btn_reset);
-        btnBack = (TextView)findViewById(R.id.forgot_btn_back);
-        activity_forgot = (RelativeLayout)findViewById(R.id.activity_forgot_password);
+        input_email = findViewById(R.id.forgot_email);
+        btnResetPass = findViewById(R.id.forgot_btn_reset);
+        btnBack = findViewById(R.id.forgot_btn_back);
+        activity_forgot = findViewById(R.id.activity_forgot_password);
 
         btnResetPass.setOnClickListener(this);
         btnBack.setOnClickListener(this);
 
         //Init Firebase
-        auth = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
 
     }
 
@@ -47,7 +47,7 @@ public class ForgotPassword extends AppCompatActivity implements View.OnClickLis
     public void onClick(View view) {
             if(view.getId() == R.id.forgot_btn_back)
             {
-                startActivity(new Intent(this,Login.class));
+                startActivity(new Intent(this,LoginActivity.class));
                 finish();
             }
         else  if(view.getId() == R.id.forgot_btn_reset)
@@ -57,7 +57,7 @@ public class ForgotPassword extends AppCompatActivity implements View.OnClickLis
     }
 
     private void resetPassword(final String email) {
-        auth.sendPasswordResetEmail(email)
+        mAuth.sendPasswordResetEmail(email)
                 .addOnCompleteListener(this, new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {

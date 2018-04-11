@@ -18,11 +18,15 @@ package com.example.mike4christ.medmanager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class About extends AppCompatActivity {
+import de.hdodenhof.circleimageview.CircleImageView;
 
+public class About extends AppCompatActivity {
+public CircleImageView about_circle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
+
+        about_circle=(CircleImageView)findViewById(R.id.about_circle);
     }
 }

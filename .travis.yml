@@ -1,9 +1,9 @@
 
-hi i also have the same issue but the above solution was not working in my case.But if fix it by giving
+#hi i also have the same issue but the above solution was not working in my case.But if fix it by giving
 
 before_install:
 - chmod +x gradlew
-After applying chmode on before_install i have resolved the issue.
+#After applying chmode on before_install i have resolved the issue.
 
 Complete .travis.yml
 

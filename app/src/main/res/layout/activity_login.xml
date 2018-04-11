@@ -4,18 +4,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:background="@drawable/firebase"
+    android:background="@drawable/bgpicfi"
     tools:context="com.example.mike4christ.medmanager.LoginActivity">
 
     <ImageView
         android:id="@+id/logo"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="32dp"
         android:contentDescription="mylogo"
-        android:src="@drawable/firebase"/>
+        android:src="@drawable/medical_logo"/>
 
 
     <TextView
@@ -36,10 +36,9 @@
         android:layout_height="wrap_content"
         android:hint="@string/email_hint"
         android:inputType="textEmailAddress"
+        android:textColorHint="#ffffff"
         android:maxLines="1"
         android:padding="12dp"
-        android:background="@drawable/bottom_border"
-        android:textColor="@color/colorBlack"
         android:layout_below="@+id/login_error"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="8dp"
@@ -50,11 +49,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/password_hint"
+        android:textColorHint="#ffffff"
         android:inputType="textPassword"
         android:maxLines="1"
         android:padding="12dp"
-        android:textColor="@color/colorBlack"
-        android:background="@drawable/bottom_border"
         android:layout_below="@+id/email"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="8dp"

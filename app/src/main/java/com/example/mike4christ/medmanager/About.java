@@ -27,6 +27,6 @@ public CircleImageView about_circle;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
 
-        about_circle=(CircleImageView)findViewById(R.id.about_circle);
+
     }
 }

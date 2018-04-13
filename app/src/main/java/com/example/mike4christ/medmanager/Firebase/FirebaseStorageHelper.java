@@ -66,8 +66,10 @@ public class FirebaseStorageHelper {
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                 Uri downloadUrl = taskSnapshot.getDownloadUrl();
                 Glide.with(context).load(downloadUrl.getPath()).into(imageView);
+
             }
         });
 
     }
+
 }

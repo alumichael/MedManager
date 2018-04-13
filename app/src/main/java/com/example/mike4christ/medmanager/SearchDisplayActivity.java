@@ -44,7 +44,7 @@ public class SearchDisplayActivity extends AppCompatActivity implements
 
 
     /** Identifier for the employee data loader */
-    private static final int EMPLOYEE_LOADER = 0;
+    private static final int DRUG_LOADER = 0;
 
     /** Adapter for the ListView */
     EmployeeCursorAdapter mCursorAdapter;
@@ -59,13 +59,11 @@ public class SearchDisplayActivity extends AppCompatActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_employee);
+        setContentView(R.layout.activity_searchdiaplay);
 
         // Setup FAB to open EmployeeEditor
         ButterKnife.bind(this);
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(mToolbar);
-        mToolbar.setTitle(R.string.app_name);
+
 
         // Find the ListView which will be populated with the employee data
         ListView employeeListView =  findViewById(R.id.list);
@@ -96,7 +94,6 @@ public class SearchDisplayActivity extends AppCompatActivity implements
 
                 // Set the URI on the data field of the intent
                 intent.setData(currentEmployeeUri);
-               // intent.putExtra(AddReminderActivity.EXTRA_RECT, createRect(button));
 
                 startActivity(intent);
 
@@ -130,7 +127,7 @@ public class SearchDisplayActivity extends AppCompatActivity implements
         });
 
         // Kick off the loader
-        getLoaderManager().initLoader(EMPLOYEE_LOADER, null, this);
+        getLoaderManager().initLoader(DRUG_LOADER, null, this);
 
     }
 

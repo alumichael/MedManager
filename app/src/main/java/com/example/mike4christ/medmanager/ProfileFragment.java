@@ -41,6 +41,8 @@ import com.example.mike4christ.medmanager.Firebase.FirebaseDatabaseHelper;
 import com.example.mike4christ.medmanager.Firebase.FirebaseStorageHelper;
 import com.example.mike4christ.medmanager.Helper.Helper;
 import com.example.mike4christ.medmanager.Helper.SimpleDividerItemDecoration;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -60,9 +62,10 @@ public class ProfileFragment extends Fragment {
     private RecyclerView recyclerView;
 
     private LinearLayoutManager linearLayoutManager;
+    private StorageReference rootRef;
 
     private String id;
-
+    private FirebaseStorage firebaseStorage;
     private static final int REQUEST_READ_PERMISSION = 120;
 
     public ProfileFragment() {
@@ -86,6 +89,7 @@ public class ProfileFragment extends Fragment {
         country.setVisibility(View.GONE);
 
         profilePhoto = (CircleImageView) view.findViewById(R.id.circleView);
+
         profilePhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -98,6 +102,7 @@ public class ProfileFragment extends Fragment {
         recyclerView = (RecyclerView)view.findViewById(R.id.profile_list);
         linearLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(linearLayoutManager);
+
         recyclerView.addItemDecoration(new SimpleDividerItemDecoration(getActivity()));
 
         ((FirebaseApplication)getActivity().getApplication()).getFirebaseAuth();
@@ -106,6 +111,8 @@ public class ProfileFragment extends Fragment {
         FirebaseDatabaseHelper firebaseDatabaseHelper = new FirebaseDatabaseHelper();
         firebaseDatabaseHelper.isUserKeyExist(id, getActivity(), recyclerView);
         return view;
+
+
     }
 
     @Override
@@ -133,6 +140,9 @@ public class ProfileFragment extends Fragment {
         if (requestCode == Helper.SELECT_PICTURE) {
             Uri selectedImageUri = data.getData();
             String imagePath = getPath(selectedImageUri);
+
+            profilePhoto.setImageURI(selectedImageUri);
+
             FirebaseStorageHelper storageHelper = new FirebaseStorageHelper(getActivity());
 
             if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {

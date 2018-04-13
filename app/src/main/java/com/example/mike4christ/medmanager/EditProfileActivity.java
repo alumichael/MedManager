@@ -22,6 +22,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -93,6 +94,8 @@ public class EditProfileActivity extends AppCompatActivity {
                     FirebaseUserEntity userEntity = new FirebaseUserEntity(id, profileEmail, profileName, profileCountry, profilePhoneNumber, profileBirthday, profileHobby);
                     FirebaseDatabaseHelper firebaseDatabaseHelper = new FirebaseDatabaseHelper();
                     firebaseDatabaseHelper.createUserInFirebaseDatabase(id, userEntity);
+
+                    Toast.makeText(EditProfileActivity.this, "Profile Updated Successfully", Toast.LENGTH_SHORT).show();
 
                     editProfileName.setText("");
                     editProfileCountry.setText("");

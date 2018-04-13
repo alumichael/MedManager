@@ -47,11 +47,11 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/profile_list"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="match_parent"
         android:layout_below="@+id/profile_header"
         android:layout_centerHorizontal="true"
         android:orientation="vertical"
-        android:scrollbars="none"/>
+        android:scrollbars="vertical"/>
 
 
 </RelativeLayout>

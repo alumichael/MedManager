@@ -34,7 +34,7 @@ public class FirebaseApplication extends Application {
 
     private static final String TAG = FirebaseApplication.class.getSimpleName();
 
-    public FirebaseAuth firebaseAuth;
+    private FirebaseAuth firebaseAuth;
 
     public FirebaseAuth.AuthStateListener mAuthListener;
 

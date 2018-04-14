@@ -34,7 +34,7 @@
         android:padding="16dp"
         android:layout_below="@+id/toolbar"
         android:textStyle="bold"
-        android:text="Click on List to Set Reminder Task"/>
+        android:text="@string/click_on_list_to_set_reminder_task"/>
 
 
     <ListView
@@ -54,7 +54,7 @@
             android:id="@+id/empty_shelter_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="shelterimage"
+            android:contentDescription="@string/shelterimage"
             android:layout_centerHorizontal="true"
             android:src="@drawable/ic_add"/>
 
@@ -70,7 +70,6 @@
             android:textAppearance="?android:textAppearanceMedium"/>
 
         <TextView
-            android:id="@+id/empty_subtitle_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/empty_title_text"

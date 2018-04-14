@@ -10,13 +10,13 @@ public class RecyclerViewHolders extends RecyclerView.ViewHolder{
 
     private static final String TAG = RecyclerViewHolders.class.getSimpleName();
 
-    public TextView profileHeader;
+    public final TextView profileHeader;
 
-    public TextView profileContent;
+    public final TextView profileContent;
 
     public RecyclerViewHolders(final View itemView) {
         super(itemView);
-        profileHeader = (TextView)itemView.findViewById(R.id.heading);
-        profileContent = (TextView) itemView.findViewById(R.id.profile_content);
+        profileHeader = itemView.findViewById(R.id.heading);
+        profileContent = itemView.findViewById(R.id.profile_content);
     }
 }

@@ -11,16 +11,12 @@
             android:icon="@drawable/ic_add"
             android:title="@string/menu_chat" />
 
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@android:drawable/ic_menu_info_details"
+            android:title="@string/about" />
+
     </group>
 
-    <item android:title="Settings">
-        <menu>
-
-            <item
-                android:id="@+id/nav_about"
-                android:icon="@android:drawable/ic_menu_info_details"
-                android:title="@string/about" />
-        </menu>
-    </item>
 
 </menu>

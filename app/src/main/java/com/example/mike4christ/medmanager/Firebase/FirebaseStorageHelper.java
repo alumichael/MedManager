@@ -34,11 +34,9 @@ public class FirebaseStorageHelper {
 
     private static final String TAG = FirebaseStorageHelper.class.getCanonicalName();
 
-    private FirebaseStorage firebaseStorage;
-
     private StorageReference rootRef;
 
-    private Context context;
+    private final Context context;
 
     public FirebaseStorageHelper(Context context){
         this.context = context;
@@ -46,7 +44,7 @@ public class FirebaseStorageHelper {
     }
 
     private void init(){
-        this.firebaseStorage = FirebaseStorage.getInstance();
+        FirebaseStorage firebaseStorage = FirebaseStorage.getInstance();
         rootRef = firebaseStorage.getReferenceFromUrl("gs://medmanager-c6281.appspot.com");
     }
 

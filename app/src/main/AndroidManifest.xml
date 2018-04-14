@@ -13,9 +13,10 @@
         android:allowBackup="true"
         android:icon="@drawable/medical_logo"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/medical_logo"
+
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:fullBackupContent="@xml/backup_descriptor">
         <activity android:name=".ForgotPassword" />
         <activity
             android:name=".SplashActivity"
@@ -58,7 +59,8 @@
         <service
             android:name=".reminder.ReminderAlarmService"
             android:exported="false" />
-        <activity android:name=".SearchDisplayActivity">
+        <activity android:name=".SearchDisplayActivity"
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

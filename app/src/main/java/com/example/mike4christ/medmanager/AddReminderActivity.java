@@ -60,7 +60,6 @@ public class AddReminderActivity extends AppCompatActivity implements
     private static final int EXISTING_DRUG_LOADER = 0;
 
 
-    private Toolbar mToolbar;
     private EditText mTitleText,mDescriptionText;
     private TextView mStartDateText, mTimeText, mRepeatText, mRepeatNoText, mRepeatTypeText;
     private FloatingActionButton mFAB1;
@@ -100,8 +99,10 @@ public class AddReminderActivity extends AppCompatActivity implements
     private static final long milMonth = 2592000000L;
 
     private View.OnTouchListener mTouchListener = new View.OnTouchListener() {
+
         @Override
         public boolean onTouch(View view, MotionEvent motionEvent) {
+
             mDrugHasChanged = true;
             return false;
         }
@@ -132,19 +133,19 @@ public class AddReminderActivity extends AppCompatActivity implements
 
 
         // Initialize Views
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        mTitleText = (EditText) findViewById(R.id.reminder_title);
-        mDescriptionText=(EditText)findViewById(R.id.description) ;
-        mStartDateText = (TextView) findViewById(R.id.set_start_date);
+        Toolbar mToolbar = findViewById(R.id.toolbar);
+        mTitleText = findViewById(R.id.reminder_title);
+        mDescriptionText= findViewById(R.id.description);
+        mStartDateText = findViewById(R.id.set_start_date);
 
 
-        mTimeText = (TextView) findViewById(R.id.set_time);
-        mRepeatText = (TextView) findViewById(R.id.set_repeat);
-        mRepeatNoText = (TextView) findViewById(R.id.set_repeat_no);
-        mRepeatTypeText = (TextView) findViewById(R.id.set_repeat_type);
-        mRepeatSwitch = (Switch) findViewById(R.id.repeat_switch);
-        mFAB1 = (FloatingActionButton) findViewById(R.id.starred1);
-        mFAB2 = (FloatingActionButton) findViewById(R.id.starred2);
+        mTimeText = findViewById(R.id.set_time);
+        mRepeatText = findViewById(R.id.set_repeat);
+        mRepeatNoText = findViewById(R.id.set_repeat_no);
+        mRepeatTypeText = findViewById(R.id.set_repeat_type);
+        mRepeatSwitch = findViewById(R.id.repeat_switch);
+        mFAB1 = findViewById(R.id.starred1);
+        mFAB2 = findViewById(R.id.starred2);
 
         // Initialize default values
         mActive = "true";
@@ -198,7 +199,7 @@ public class AddReminderActivity extends AppCompatActivity implements
         mTimeText.setText(mTime);
         mRepeatNoText.setText(mRepeatNo);
         mRepeatTypeText.setText(mRepeatType);
-        mRepeatText.setText("Every " + mRepeatNo + " " + mRepeatType + "(s)");
+        mRepeatText.setText("Every "+ mRepeatNo + " " + mRepeatType + "(s)");
 
         // To save state on device rotation
         if (savedInstanceState != null) {
@@ -331,18 +332,18 @@ public class AddReminderActivity extends AppCompatActivity implements
 
     // On clicking the active button
     public void selectFab1(View v) {
-        mFAB1 = (FloatingActionButton) findViewById(R.id.starred1);
+        mFAB1 = findViewById(R.id.starred1);
         mFAB1.setVisibility(View.GONE);
-        mFAB2 = (FloatingActionButton) findViewById(R.id.starred2);
+        mFAB2 = findViewById(R.id.starred2);
         mFAB2.setVisibility(View.VISIBLE);
         mActive = "true";
     }
 
     // On clicking the inactive button
     public void selectFab2(View v) {
-        mFAB2 = (FloatingActionButton) findViewById(R.id.starred2);
+        mFAB2 = findViewById(R.id.starred2);
         mFAB2.setVisibility(View.GONE);
-        mFAB1 = (FloatingActionButton) findViewById(R.id.starred1);
+        mFAB1 = findViewById(R.id.starred1);
         mFAB1.setVisibility(View.VISIBLE);
         mActive = "false";
     }
@@ -567,7 +568,7 @@ public class AddReminderActivity extends AppCompatActivity implements
     }
 
     // On clicking the save button
-    public void saveReminder(){
+    private void saveReminder(){
 
      /*   if (mCurrentReminderUri == null ) {
             // Since no fields were modified, we can return early without creating a new reminder.
@@ -660,15 +661,6 @@ public class AddReminderActivity extends AppCompatActivity implements
                 Toast.LENGTH_SHORT).show();
 
     }
-
-    // On pressing the back button
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-
-    }
-
-
 
 
     @Override

@@ -61,7 +61,6 @@
         android:singleLine="true" />
 
     <LinearLayout
-        android:id="@+id/select_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -81,7 +80,6 @@
             android:singleLine="true" />
 
         <Button
-            android:id="@+id/profile_birth_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"

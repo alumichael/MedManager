@@ -32,15 +32,17 @@ import com.example.mike4christ.medmanager.data.AlarmReminderContract;
  * Created by Alu Michael on 9/4/18.
  */
 
-public class AlarmCursorAdapter extends CursorAdapter {
+class AlarmCursorAdapter extends CursorAdapter {
 
-    private TextView mTitleText,mDescriptionText, mStartDateAndTimeText, mRepeatInfoText,mCategory_month;
+    private TextView mTitleText;
+    private TextView mStartDateAndTimeText;
+    private TextView mRepeatInfoText;
+    private TextView mCategory_month;
     private ImageView mActiveImage , mThumbnailImage;
-    private ColorGenerator mColorGenerator = ColorGenerator.DEFAULT;
-    private TextDrawable mDrawableBuilder;
+    private final ColorGenerator mColorGenerator = ColorGenerator.DEFAULT;
 
-    public AlarmCursorAdapter(Context context, Cursor c) {
-        super(context, c, 0 /* flags */);
+    public AlarmCursorAdapter(Context context) {
+        super(context, null, 0 /* flags */);
     }
     @Override
     public View newView(Context context, Cursor cursor, ViewGroup parent) {
@@ -50,13 +52,13 @@ public class AlarmCursorAdapter extends CursorAdapter {
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
 
-        mTitleText = (TextView) view.findViewById(R.id.recycle_title);
-        mDescriptionText=(TextView)view.findViewById(R.id.recycle_description);
-        mStartDateAndTimeText = (TextView) view.findViewById(R.id.recycle_start_date_time);
-        mCategory_month= (TextView) view.findViewById(R.id.recycle_category);
-        mRepeatInfoText = (TextView) view.findViewById(R.id.recycle_repeat_info);
-        mActiveImage = (ImageView) view.findViewById(R.id.active_image);
-        mThumbnailImage = (ImageView) view.findViewById(R.id.thumbnail_image);
+        mTitleText = view.findViewById(R.id.recycle_title);
+        TextView mDescriptionText = view.findViewById(R.id.recycle_description);
+        mStartDateAndTimeText = view.findViewById(R.id.recycle_start_date_time);
+        mCategory_month= view.findViewById(R.id.recycle_category);
+        mRepeatInfoText = view.findViewById(R.id.recycle_repeat_info);
+        mActiveImage = view.findViewById(R.id.active_image);
+        mThumbnailImage = view.findViewById(R.id.thumbnail_image);
 
         int titleColumnIndex = cursor.getColumnIndex(AlarmReminderContract.AlarmReminderEntry.KEY_TITLE);
         int descriptionColumnIndex = cursor.getColumnIndex(AlarmReminderContract.AlarmReminderEntry.KEY_DESCRIPTION);
@@ -137,8 +139,7 @@ public class AlarmCursorAdapter extends CursorAdapter {
             mCategory_month.setText("Category not set");
         }
         if (description != null){
-            String descriptn = description;
-            mDescriptionText.setText(descriptn);
+            mDescriptionText.setText(description);
 
         }else{
             mStartDateAndTimeText.setText("No Description yet !");
@@ -165,7 +166,7 @@ public class AlarmCursorAdapter extends CursorAdapter {
     }
 
     // Set reminder title view
-    public void setReminderTitle(String title) {
+    private void setReminderTitle(String title) {
         mTitleText.setText(title);
         String letter = "A";
 
@@ -176,13 +177,13 @@ public class AlarmCursorAdapter extends CursorAdapter {
         int color = mColorGenerator.getRandomColor();
 
         // Create a circular icon consisting of  a random background colour and first letter of title
-        mDrawableBuilder = TextDrawable.builder()
+        TextDrawable mDrawableBuilder = TextDrawable.builder()
                 .buildRound(letter, color);
         mThumbnailImage.setImageDrawable(mDrawableBuilder);
     }
 
     // Set date and time views
-    public void setStartReminderDateTime(String start_datetime,String category_month) {
+    private void setStartReminderDateTime(String start_datetime, String category_month) {
         mStartDateAndTimeText.setText(start_datetime);
         mCategory_month.setText(category_month);
 
@@ -190,7 +191,7 @@ public class AlarmCursorAdapter extends CursorAdapter {
 
 
     // Set repeat views
-    public void setReminderRepeatInfo(String repeat, String repeatNo, String repeatType) {
+    private void setReminderRepeatInfo(String repeat, String repeatNo, String repeatType) {
         if(repeat.equals("true")){
             mRepeatInfoText.setText("Every " + repeatNo + " " + repeatType + "(s)");
         }else if (repeat.equals("false")) {
@@ -199,7 +200,7 @@ public class AlarmCursorAdapter extends CursorAdapter {
     }
 
     // Set active image as on or off
-    public void setActiveImage(String active){
+    private void setActiveImage(String active){
         if(active.equals("true")){
             mActiveImage.setImageResource(R.drawable.ic_notifications_on_white_24dp);
         }else if (active.equals("false")) {

@@ -34,7 +34,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 /**
- * Created by Alu Michael on 8/23/17.
+ * Created by Alu Michael on 8/4/18.
  */
 
 public class SearchableActivity extends ListActivity {
@@ -111,6 +111,7 @@ public class SearchableActivity extends ListActivity {
                 0);
 
         setListAdapter(adapter);
+        cursor.close();
 
     }
 

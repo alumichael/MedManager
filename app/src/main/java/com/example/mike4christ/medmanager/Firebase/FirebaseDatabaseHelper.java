@@ -37,7 +37,7 @@ public class FirebaseDatabaseHelper {
 
     private static final String TAG = FirebaseDatabaseHelper.class.getSimpleName();
 
-    private DatabaseReference databaseReference;
+    private final DatabaseReference databaseReference;
 
     public FirebaseDatabaseHelper(){
         databaseReference = FirebaseDatabase.getInstance().getReference();
@@ -56,7 +56,7 @@ public class FirebaseDatabaseHelper {
                 System.out.println("User login 1 " + dataSnapshot.getKey() + " " + dataSnapshot.getValue());
                 List<UserProfile> userData = adapterSourceData(dataSnapshot, uid);
                 System.out.println("User login Size " + userData.size());
-                RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter((Activity)context, userData);
+                RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(context, userData);
                 recyclerView.setAdapter(recyclerViewAdapter);
             }
 
@@ -64,7 +64,7 @@ public class FirebaseDatabaseHelper {
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
                 List<UserProfile> userData = adapterSourceData(dataSnapshot, uid);
                 System.out.println("User login Size " + userData.size());
-                RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter((Activity)context, userData);
+                RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(context, userData);
                 recyclerView.setAdapter(recyclerViewAdapter);
             }
 

@@ -34,8 +34,6 @@ import com.google.firebase.auth.FirebaseAuth;
 public class ForgotPassword extends AppCompatActivity implements View.OnClickListener {
 
     private EditText input_email;
-    private Button btnResetPass;
-    private TextView btnBack;
     private RelativeLayout activity_forgot;
 
     private FirebaseAuth mAuth;
@@ -47,8 +45,8 @@ public class ForgotPassword extends AppCompatActivity implements View.OnClickLis
 
         //View
         input_email = findViewById(R.id.forgot_email);
-        btnResetPass = findViewById(R.id.forgot_btn_reset);
-        btnBack = findViewById(R.id.forgot_btn_back);
+        Button btnResetPass = findViewById(R.id.forgot_btn_reset);
+        TextView btnBack = findViewById(R.id.forgot_btn_back);
         activity_forgot = findViewById(R.id.activity_forgot_password);
 
         btnResetPass.setOnClickListener(this);

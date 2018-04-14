@@ -17,7 +17,7 @@ import android.util.Log;
 
 public class AlarmReminderProvider extends ContentProvider {
 
-    public static final String LOG_TAG = AlarmReminderProvider.class.getSimpleName();
+    private static final String LOG_TAG = AlarmReminderProvider.class.getSimpleName();
 
     private static final int REMINDER = 101;
 

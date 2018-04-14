@@ -32,16 +32,15 @@ import com.example.mike4christ.medmanager.data.AlarmReminderContract;
  * that uses a {@link Cursor} of employee data as its data source. This adapter knows
  * how to create list items for each row of employee data in the {@link Cursor}.
  */
-public class EmployeeCursorAdapter extends CursorAdapter {
+class EmployeeCursorAdapter extends CursorAdapter {
 
     /**
      * Constructs a new {@link EmployeeCursorAdapter}.
+     *  @param context The context
      *
-     * @param context The context
-     * @param c       The cursor from which to get the data.
      */
-    public EmployeeCursorAdapter(Context context, Cursor c) {
-        super(context, c, 0 /* flags */);
+    public EmployeeCursorAdapter(Context context) {
+        super(context, null, 0 /* flags */);
     }
 
     /**
@@ -72,9 +71,9 @@ public class EmployeeCursorAdapter extends CursorAdapter {
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
         // Find individual views that we want to modify in the list item layout
-        TextView drugnameTextView = (TextView) view.findViewById(R.id.drug_name);
-        TextView descriptionTextView = (TextView) view.findViewById(R.id.drug_description);
-        TextView date = (TextView) view.findViewById(R.id.date);
+        TextView drugnameTextView = view.findViewById(R.id.drug_name);
+        TextView descriptionTextView = view.findViewById(R.id.drug_description);
+        TextView date = view.findViewById(R.id.date);
 
         // Find the columns of employee attributes that we're interested in
         int drugnameColumnIndex = cursor.getColumnIndex(AlarmReminderContract.AlarmReminderEntry.KEY_TITLE);

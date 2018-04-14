@@ -59,13 +59,13 @@ public class EditProfileActivity extends AppCompatActivity {
 
         setTitle("Edit Profile Information");
 
-        editProfileName = (EditText)findViewById(R.id.profile_name);
-        editProfileCountry = (EditText)findViewById(R.id.profile_country);
-        editProfilePhoneNumber = (EditText)findViewById(R.id.profile_phone);
-        editProfileHobby = (EditText)findViewById(R.id.profile_hobby);
-        editProfileBirthday = (EditText)findViewById(R.id.profile_birth);
+        editProfileName = findViewById(R.id.profile_name);
+        editProfileCountry = findViewById(R.id.profile_country);
+        editProfilePhoneNumber = findViewById(R.id.profile_phone);
+        editProfileHobby = findViewById(R.id.profile_hobby);
+        editProfileBirthday = findViewById(R.id.profile_birth);
 
-        Button saveEditButton = (Button)findViewById(R.id.save_edit_button);
+        Button saveEditButton = findViewById(R.id.save_edit_button);
         saveEditButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

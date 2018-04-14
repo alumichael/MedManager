@@ -47,7 +47,7 @@ public class SearchDisplayActivity extends AppCompatActivity implements
     private static final int DRUG_LOADER = 0;
 
     /** Adapter for the ListView */
-    EmployeeCursorAdapter mCursorAdapter;
+    private EmployeeCursorAdapter mCursorAdapter;
     private Toolbar mToolbar;
 
 
@@ -64,6 +64,12 @@ public class SearchDisplayActivity extends AppCompatActivity implements
         // Setup FAB to open EmployeeEditor
         ButterKnife.bind(this);
 
+        Toolbar mToolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setTitle(R.string.search);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+
 
         // Find the ListView which will be populated with the employee data
         ListView employeeListView =  findViewById(R.id.list);
@@ -74,7 +80,7 @@ public class SearchDisplayActivity extends AppCompatActivity implements
 
         // Setup an Adapter to create a list item for each row of employee data in the Cursor.
         // There is no employee data yet (until the loader finishes) so pass in null for the Cursor.
-        mCursorAdapter = new EmployeeCursorAdapter(this, null);
+        mCursorAdapter = new EmployeeCursorAdapter(this);
         employeeListView.setAdapter(mCursorAdapter);
 
        //TODO

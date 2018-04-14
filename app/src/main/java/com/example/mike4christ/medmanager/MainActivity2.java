@@ -53,13 +53,11 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity2 extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
-    private FloatingActionButton mAddReminderButton;
-    private Toolbar mToolbar;
-    AlarmCursorAdapter mCursorAdapter;
+    private AlarmCursorAdapter mCursorAdapter;
     AlarmReminderDbHelper alarmReminderDbHelper = new AlarmReminderDbHelper(this);
-    ListView reminderListView;
+    private ListView reminderListView;
     ProgressDialog prgDialog;
-    TextView reminderText;
+    private TextView reminderText;
     private RelativeLayout activity_main;
     private String alarmTitle = "";
 
@@ -71,13 +69,13 @@ public class MainActivity2 extends AppCompatActivity implements LoaderManager.Lo
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar mToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
         mToolbar.setTitle(R.string.app_name);
 
 
-        reminderListView = (ListView) findViewById(R.id.list);
-        reminderText = (TextView) findViewById(R.id.reminderText);
+        reminderListView = findViewById(R.id.list);
+        reminderText = findViewById(R.id.reminderText);
 
 
         //Init Firebase
@@ -87,7 +85,7 @@ public class MainActivity2 extends AppCompatActivity implements LoaderManager.Lo
         View emptyView = findViewById(R.id.empty_view);
         reminderListView.setEmptyView(emptyView);
 
-        mCursorAdapter = new AlarmCursorAdapter(this, null);
+        mCursorAdapter = new AlarmCursorAdapter(this);
         reminderListView.setAdapter(mCursorAdapter);
 
         reminderListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -107,7 +105,7 @@ public class MainActivity2 extends AppCompatActivity implements LoaderManager.Lo
         });
 
 
-        mAddReminderButton = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton mAddReminderButton = findViewById(R.id.fab);
 
 
 
@@ -166,7 +164,7 @@ public class MainActivity2 extends AppCompatActivity implements LoaderManager.Lo
 
     }
 
-    public void addReminderTitle() {
+    private void addReminderTitle() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Set Drug Name");
@@ -210,7 +208,7 @@ public class MainActivity2 extends AppCompatActivity implements LoaderManager.Lo
         builder.show();
     }
 
-    public void restartLoader() {
+    private void restartLoader() {
         getSupportLoaderManager().restartLoader(DRUG_LOADER, null, this);
     }
 

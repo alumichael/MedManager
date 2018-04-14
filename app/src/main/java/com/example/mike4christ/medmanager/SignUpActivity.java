@@ -40,11 +40,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     private EditText passwordInput;
 
-    private Button signUpText;
-
     private TextView loginError;
-
-    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,15 +56,15 @@ public class SignUpActivity extends AppCompatActivity {
             actionBar.hide();
         }
 
-        mAuth = ((FirebaseApplication)getApplication()).getFirebaseAuth();
+        FirebaseAuth mAuth = ((FirebaseApplication) getApplication()).getFirebaseAuth();
         ((FirebaseApplication)getApplication()).checkUserLogin(SignUpActivity.this);
 
-        loginError = (TextView)findViewById(R.id.login_error);
+        loginError = findViewById(R.id.login_error);
 
-        emailInput = (EditText)findViewById(R.id.email);
-        passwordInput = (EditText)findViewById(R.id.password);
+        emailInput = findViewById(R.id.email);
+        passwordInput = findViewById(R.id.password);
 
-        signUpText = (Button)findViewById(R.id.register);
+        Button signUpText = findViewById(R.id.register);
         signUpText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,7 +73,7 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
 
-        final Button loginButton = (Button)findViewById(R.id.login_button);
+        final Button loginButton = findViewById(R.id.login_button);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -88,7 +84,7 @@ public class SignUpActivity extends AppCompatActivity {
                     Helper.displayMessageToast(SignUpActivity.this, "Login fields must be filled");
                     return;
                 }
-                if(!Helper.isValidEmail(enteredEmail)){
+                if(Helper.isValidEmail(enteredEmail)){
                     Helper.displayMessageToast(SignUpActivity.this, "Invalidate email entered");
                     return;
                 }

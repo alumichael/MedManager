@@ -22,7 +22,7 @@ import android.content.Context;
  * Created by Alu Michael on 9/4/18.
  */
 
-public class AlarmManagerProvider {
+class AlarmManagerProvider {
     private static final String TAG = AlarmManagerProvider.class.getSimpleName();
     private static AlarmManager sAlarmManager;
     public static synchronized void injectAlarmManager(AlarmManager alarmManager) {

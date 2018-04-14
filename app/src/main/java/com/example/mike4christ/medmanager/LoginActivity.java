@@ -40,11 +40,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText passwordInput;
 
-    private Button signUpText;
-
-    private TextView loginError,forget_password;
-
-    private FirebaseAuth mAuth;
+    private TextView loginError;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,17 +56,17 @@ public class LoginActivity extends AppCompatActivity {
             actionBar.hide();
         }
 
-        mAuth = ((FirebaseApplication)getApplication()).getFirebaseAuth();
+        FirebaseAuth mAuth = ((FirebaseApplication) getApplication()).getFirebaseAuth();
         ((FirebaseApplication)getApplication()).checkUserLogin(LoginActivity.this);
 
-        loginError = (TextView)findViewById(R.id.login_error);
-        forget_password = (TextView)findViewById(R.id.forget_password);
+        loginError = findViewById(R.id.login_error);
+        TextView forget_password = findViewById(R.id.forget_password);
 
-        emailInput = (EditText)findViewById(R.id.email);
-        passwordInput = (EditText)findViewById(R.id.password);
+        emailInput = findViewById(R.id.email);
+        passwordInput = findViewById(R.id.password);
 
 
-        signUpText = (Button)findViewById(R.id.register);
+        Button signUpText = findViewById(R.id.register);
 
         forget_password.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,7 +84,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        final Button loginButton = (Button)findViewById(R.id.login_button);
+        final Button loginButton = findViewById(R.id.login_button);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -99,7 +95,7 @@ public class LoginActivity extends AppCompatActivity {
                     Helper.displayMessageToast(LoginActivity.this, "Login fields must be filled");
                     return;
                 }
-                if(!Helper.isValidEmail(enteredEmail)){
+                if(Helper.isValidEmail(enteredEmail)){
                     Helper.displayMessageToast(LoginActivity.this, "Invalidate email entered");
                     return;
                 }

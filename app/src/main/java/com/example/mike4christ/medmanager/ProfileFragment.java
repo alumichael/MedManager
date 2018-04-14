@@ -53,15 +53,8 @@ public class ProfileFragment extends Fragment {
 
     private CircleImageView profilePhoto;
 
-    private TextView profileName;
-
-    private TextView country;
-
     private TextView userStatus;
 
-    private RecyclerView recyclerView;
-
-    private LinearLayoutManager linearLayoutManager;
     private StorageReference rootRef;
 
     private String id;
@@ -83,12 +76,12 @@ public class ProfileFragment extends Fragment {
 
         getActivity().setTitle("My Profile");
 
-        profileName = (TextView)view.findViewById(R.id.profile_name);
-        country = (TextView)view.findViewById(R.id.country);
+        TextView profileName = view.findViewById(R.id.profile_name);
+        TextView country = view.findViewById(R.id.country);
         profileName.setVisibility(View.GONE);
         country.setVisibility(View.GONE);
 
-        profilePhoto = (CircleImageView) view.findViewById(R.id.circleView);
+        profilePhoto = view.findViewById(R.id.circleView);
 
         profilePhoto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,8 +92,8 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-        recyclerView = (RecyclerView)view.findViewById(R.id.profile_list);
-        linearLayoutManager = new LinearLayoutManager(getActivity());
+        RecyclerView recyclerView = view.findViewById(R.id.profile_list);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(linearLayoutManager);
 
         recyclerView.addItemDecoration(new SimpleDividerItemDecoration(getActivity()));
@@ -153,7 +146,7 @@ public class ProfileFragment extends Fragment {
         }
     }
 
-    public String getPath(Uri uri) {
+    private String getPath(Uri uri) {
         String[] projection = { MediaStore.Images.Media.DATA };
         Cursor cursor = getActivity().getContentResolver().query(uri, projection, null, null, null);
         assert cursor != null;

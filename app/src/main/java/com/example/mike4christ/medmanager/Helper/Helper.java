@@ -34,10 +34,8 @@ public class Helper {
     public static final int SELECT_PICTURE = 2000;
 
     public static boolean isValidEmail(String email){
-        if(email.contains("@")){
-            return true;
-        }
-        return false;
+        return !email.contains("@");
+
     }
 
     public static void displayMessageToast(Context context, String displayMessage){

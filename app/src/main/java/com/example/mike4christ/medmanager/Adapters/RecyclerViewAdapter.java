@@ -13,9 +13,9 @@ import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewHolders> {
 
-    private List<UserProfile> user;
+    private final List<UserProfile> user;
 
-    protected Context context;
+    private final Context context;
 
     public RecyclerViewAdapter(Context context, List<UserProfile> user) {
         this.user = user;

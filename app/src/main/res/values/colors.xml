@@ -5,15 +5,12 @@
     <color name="colorAccent">#536DFE</color>
     <color name="fab_pressed">#546e7a</color>
 
-    <color name="editorColorPrimary">#2D3640</color>
-
-    <color name="text">#FFFFFF</color>
-
-    <color name="editorColorPrimaryDark">#394450</color>
     <color name="colorWhite">#ffffff</color>
-    <color name="colorBlack">#000000</color>
     <color name="colorMild">#9d9c9c</color>
     <color name="colorDivider">#eae6e6</color>
+
+
+    <color name="primary_text_disabled_material_dark">#4Dffffff</color>
 
 
 </resources>

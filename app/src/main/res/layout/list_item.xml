@@ -25,7 +25,8 @@
         android:layout_marginEnd="8dp"
         android:fontFamily="sans-serif-medium"
         android:textAppearance="?android:textAppearanceMedium"
-        android:textColor="#2B3D4D"  />
+        android:textColor="@color/colorWhite"
+        android:layout_marginRight="8dp" />
 
 
     <TextView
@@ -33,8 +34,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
+        android:textColor="@color/colorWhite"
         android:textAppearance="?android:textAppearanceMedium"
-        android:textColor="#2B3D4D"
         android:layout_toEndOf="@+id/drug_name"
         android:layout_toRightOf="@+id/drug_name" />
 
@@ -43,7 +44,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
+        android:textColor="@color/colorWhite"
         android:layout_below="@+id/drug_description"
         android:textAppearance="?android:textAppearanceSmall"
-        android:textColor="#AEB6BD"  />
+        />
 </RelativeLayout>

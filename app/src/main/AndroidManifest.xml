@@ -60,12 +60,17 @@
             android:name=".reminder.ReminderAlarmService"
             android:exported="false" />
         <activity android:name=".SearchDisplayActivity"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".MainActivity2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity2" />
         </activity>
 
         <activity
